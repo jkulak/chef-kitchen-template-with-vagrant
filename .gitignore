@@ -1,3 +1,4 @@
 /cookbooks/
 hosts.json
 /.vagrant
+/data_bags/users/*.json

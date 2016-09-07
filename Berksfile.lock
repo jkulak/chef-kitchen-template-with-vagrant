@@ -1,8 +1,43 @@
 DEPENDENCIES
   apache2 (~> 3.2.2)
+  jku-common
+    git: https://github.com/jkulak/jku-common.git
+    revision: 329209f0128f9819033c4777c76b7d0dcae81dcc
   jku-multipurpose
     path: site-cookbooks/jku-multipurpose
 
 GRAPH
   apache2 (3.2.2)
+  build-essential (6.0.4)
+    compat_resource (>= 12.10)
+    mingw (>= 1.1)
+    seven_zip (>= 0.0.0)
+  chef_handler (1.4.0)
+  compat_resource (12.14.0)
+  dmg (2.4.0)
+  git (4.5.0)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  jku-common (0.1.1)
+    git (~> 4.5.0)
+    magic_shell (~> 1.0.0)
+    sudo (~> 2.7.2)
+    user (~> 0.4.2)
   jku-multipurpose (0.1.0)
+    apache2 (~> 3.2.2)
+    jku-common (~> 0.1.1)
+  magic_shell (1.0.0)
+  mingw (1.2.4)
+    compat_resource (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+  seven_zip (2.0.2)
+    windows (>= 1.2.2)
+  sudo (2.7.2)
+  user (0.4.2)
+  windows (1.44.3)
+    chef_handler (>= 0.0.0)
+  yum (4.0.0)
+  yum-epel (1.0.0)
+    yum (>= 3.6)
