@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-MACHINE_NAME = "multipurpose-dev"
+MACHINE_NAME = "griller-local"
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -50,6 +50,8 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   # Sync code directories
   # config.vm.synced_folder "../example.com.dev",   "/code/example.com.dev"
+  config.vm.synced_folder "../mount_dir",   "/mnt/host/mount_dir"
+  config.vm.synced_folder "../nodejs_code",   "/mnt/host/nodejs_code"
 
   # Configure provisioning
   config.vm.provision "chef_solo" do |chef|
@@ -58,6 +60,8 @@ Vagrant.configure(2) do |config|
       chef.data_bags_path = "./data_bags"
       chef.environments_path = "./environments"
       chef.roles_path = "./roles"
+
+      chef.environment = "local"
 
       chef.run_list = [
           "recipe[jku-multipurpose::default]"

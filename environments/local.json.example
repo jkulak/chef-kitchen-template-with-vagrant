@@ -1,0 +1,47 @@
+{
+    "chef_type": "environment",
+    "cookbook_versions": {},
+    "default_attributes": {
+        "authorization": {
+            "sudo": {
+                "passwordless": true,
+                "users": [
+                    "jkulak"
+                ]
+            }
+        },
+        "jku-mysql": {
+            "server": {
+                "master": {
+                    "db_name": "db1",
+                    "host": "127.0.0.1",
+                    "port": "3306",
+                    "root_password": "Kbt6^7uq!Xn5=:=b~2XH",
+                    "user": "www",
+                    "user_password": "5Z52*53G9A226^FVkP3u",
+                    "version": "5.6"
+                }
+            }
+        },
+        "jku-kosiarka": {
+            "performance_tester": {
+                "vhost": "perftest.example.com.dev"
+            }
+        },
+        "stridercd": {
+            "github-appid": "your_appid_here",
+            "github-appsecret": "your_appsecret_here"
+        },
+        "users": [
+            "some_user_name"
+        ],
+        "wordpress": {
+            "dir": "/var/www/wordpress.example.com.dev/releases/initial",
+            "server_name": "wordpress.example.com.dev"
+        }
+    },
+    "description": "Production environment",
+    "json_class": "Chef::Environment",
+    "name": "local",
+    "override_attributes": {}
+}

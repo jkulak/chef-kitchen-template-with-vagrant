@@ -1,0 +1,6 @@
+default['jku-mysql']['server']['master']['version'] = '5.6'
+default['jku-mysql']['server']['master']['host'] = '127.0.0.1'
+default['jku-mysql']['server']['master']['port'] = '3306'
+default['jku-mysql']['server']['master']['root_password'] = 'th1s1sm0r3s3cr3t-100!'
+default['jku-mysql']['server']['master']['user'] = 'default_user'
+default['jku-mysql']['server']['master']['user_passowrd'] = 'th1s1sm0r3s3cr3t-100!'

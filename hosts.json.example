@@ -1,0 +1,6 @@
+{
+    "add_to_local_hosts": [
+        "perftest.example.com.dev",
+        "wordpress.example.com.dev"
+    ]
+}
