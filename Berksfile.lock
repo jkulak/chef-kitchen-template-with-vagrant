@@ -5,6 +5,7 @@ DEPENDENCIES
     revision: 329209f0128f9819033c4777c76b7d0dcae81dcc
   jku-multipurpose
     path: site-cookbooks/jku-multipurpose
+  locale (~> 1.1.0)
   php (~> 1.10.1)
 
 GRAPH
@@ -32,7 +33,9 @@ GRAPH
   jku-multipurpose (0.1.0)
     apache2 (~> 3.2.2)
     jku-common (~> 0.1.1)
+    locale (~> 1.1.0)
     php (~> 1.10.1)
+  locale (1.1.0)
   magic_shell (1.0.0)
   mingw (1.2.4)
     compat_resource (>= 0.0.0)
