@@ -1,0 +1,8 @@
+DEPENDENCIES
+  apache2 (~> 3.2.2)
+  jku-multipurpose
+    path: site-cookbooks/jku-multipurpose
+
+GRAPH
+  apache2 (3.2.2)
+  jku-multipurpose (0.1.0)
