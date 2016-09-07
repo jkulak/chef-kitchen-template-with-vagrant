@@ -9,3 +9,4 @@
 
 include_recipe 'jku-common::default'
 include_recipe 'jku-multipurpose::apache2'
+include_recipe 'jku-multipurpose::php'
