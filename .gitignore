@@ -2,3 +2,4 @@
 hosts.json
 /.vagrant
 /data_bags/users/*.json
+/nodes/*.json

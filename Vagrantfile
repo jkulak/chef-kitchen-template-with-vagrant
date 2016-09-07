@@ -36,7 +36,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.name = MACHINE_NAME
 
-    vb.memory = 1000
+    vb.memory = 2000
     vb.cpus = 1
   end
 
@@ -66,7 +66,7 @@ Vagrant.configure(2) do |config|
           # authorization - Add vagrant user back to sudoers after 'sudo' cookbook removes it
           "authorization" => {
               "sudo" => {
-                  "users" => [ "vagrant" ],
+                  "users" => [ "vagrant", "jkulak" ],
                   "passwordless" => true,
               }
           }

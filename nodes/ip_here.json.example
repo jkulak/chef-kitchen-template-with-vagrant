@@ -1,0 +1,8 @@
+{
+  "run_list": [
+    "recipe[jku-multipurpose::default]"
+  ],
+  "automatic": {
+    "ipaddress": "ip_here"
+  }
+}
