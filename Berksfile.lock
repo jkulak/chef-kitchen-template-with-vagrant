@@ -4,8 +4,8 @@ DEPENDENCIES
   jku-common
     git: https://github.com/jkulak/jku-common.git
     revision: 329209f0128f9819033c4777c76b7d0dcae81dcc
-  jku-multipurpose
-    path: site-cookbooks/jku-multipurpose
+  jku-local
+    path: site-cookbooks/jku-local
   locale (~> 1.1.0)
   mongodb
     git: https://github.com/chef-brigade/mongodb-cookbook
@@ -46,7 +46,7 @@ GRAPH
     magic_shell (~> 1.0.0)
     sudo (~> 2.7.2)
     user (~> 0.4.2)
-  jku-multipurpose (0.1.0)
+  jku-local (0.1.0)
     apache2 (~> 3.2.2)
     database (~> 5.1.2)
     jku-common (~> 0.1.1)

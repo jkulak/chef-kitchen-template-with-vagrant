@@ -1,5 +1,6 @@
-# Cookbook Name:: jku-kosiarka
-# Recipe:: project_lol
+#
+# Cookbook Name:: jku-local
+# Recipe:: nodejs_development
 #
 # Copyright 2015, Jakub Kułak
 #
@@ -16,35 +17,7 @@
 # limitations under the License.
 #
 
-# Install nodejs requirements for the project
-nodejs_npm "koa"
-nodejs_npm "mongodb"
-
-user = 'lol'
-group = 'lol'
-
-user user do
-  comment "#{user} user"
-  home "/home/#{user}"
-  shell '/bin/bash'
-end
-
-group group do
-  action :modify
-  members ['lol']
-  append true
-end
-
-# Create main vhost directory
-directory "/var/www" do
-    action :create
-    user user
-    group group
-end
-
-link "/var/www/lol" do
-    to "/mnt/host/nodejs_code/lol"
-    user user
-    group group
-not_if { ::File.exists?("/var/www/lol") }
-end
+nodejs_npm "bower"
+# nodejs_npm "supervisor"
+# Node Process Manager
+nodejs_npm "pm2"

@@ -1,6 +1,5 @@
-#
-# Cookbook Name:: jku-kosiarka
-# Recipe:: adminer
+# Cookbook Name:: jku-local
+# Recipe:: project_lol
 #
 # Copyright 2015, Jakub Kułak
 #
@@ -17,17 +16,35 @@
 # limitations under the License.
 #
 
-# Install adminer
-bash "install_adminer" do
-     user "root"
-     cwd "/tmp"
-     code <<-EOH
-        mkdir /usr/share/adminer
-        wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
-        ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
-        echo "Alias /adminer-editor /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
-        a2enconf adminer.conf
-        apache2ctl restart
-     EOH
-     not_if { ::File.exists?('/usr/share/adminer') }
+# Install nodejs requirements for the project
+nodejs_npm "koa"
+nodejs_npm "mongodb"
+
+user = 'lol'
+group = 'lol'
+
+user user do
+  comment "#{user} user"
+  home "/home/#{user}"
+  shell '/bin/bash'
+end
+
+group group do
+  action :modify
+  members ['lol']
+  append true
+end
+
+# Create main vhost directory
+directory "/var/www" do
+    action :create
+    user user
+    group group
+end
+
+link "/var/www/lol" do
+    to "/mnt/host/nodejs_code/lol"
+    user user
+    group group
+not_if { ::File.exists?("/var/www/lol") }
 end
