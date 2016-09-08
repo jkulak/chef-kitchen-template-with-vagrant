@@ -14,4 +14,4 @@ cookbook "mysql", "~> 8.0.2"
 cookbook 'nodejs', '~> 2.4.4'
 
 # site-cookbooks
-cookbook 'jku-multipurpose', '~> 0.1.0',  path: './site-cookbooks/jku-multipurpose'
+cookbook 'jku-local', '~> 0.1.0',  path: './site-cookbooks/jku-local'

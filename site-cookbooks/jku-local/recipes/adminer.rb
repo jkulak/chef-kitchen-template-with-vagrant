@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: jku-kosiarka
-# Recipe:: nodejs_development
+# Cookbook Name:: jku-local
+# Recipe:: adminer
 #
 # Copyright 2015, Jakub Kułak
 #
@@ -17,7 +17,17 @@
 # limitations under the License.
 #
 
-nodejs_npm "bower"
-# nodejs_npm "supervisor"
-# Node Process Manager
-nodejs_npm "pm2"
+# Install adminer
+bash "install_adminer" do
+     user "root"
+     cwd "/tmp"
+     code <<-EOH
+        mkdir /usr/share/adminer
+        wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
+        ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
+        echo "Alias /adminer-editor /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
+        a2enconf adminer.conf
+        apache2ctl restart
+     EOH
+     not_if { ::File.exists?('/usr/share/adminer') }
+end

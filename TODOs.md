@@ -85,4 +85,4 @@
 - [x] Proper probe backend servers (Apache local host)
 - [x] Upload custom configuration template from: https://github.com/mattiasgeniar/varnish-4.0-configuration-templates
 - [x] Prepare directory structure for Strider deployments
-- [x] Replace static values from jku-kosiarka/attributes/wordpress.rb with node[‘mysql’] values (also include mysql recipe?)
+- [x] Replace static values from jku-local/attributes/wordpress.rb with node[‘mysql’] values (also include mysql recipe?)

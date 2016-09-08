@@ -23,7 +23,7 @@
                 }
             }
         },
-        "jku-kosiarka": {
+        "jku-local": {
             "performance_tester": {
                 "vhost": "perftest.example.com.dev"
             }

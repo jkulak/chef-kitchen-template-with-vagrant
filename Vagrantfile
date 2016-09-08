@@ -64,7 +64,7 @@ Vagrant.configure(2) do |config|
       chef.environment = "local"
 
       chef.run_list = [
-          "recipe[jku-multipurpose::default]"
+          "recipe[jku-local::default]"
       ]
       chef.json = {
           # authorization - Add vagrant user back to sudoers after 'sudo' cookbook removes it

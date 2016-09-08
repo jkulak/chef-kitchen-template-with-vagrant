@@ -9,6 +9,7 @@ default['mongodb']['config']['auth'] = true # Require authentication to access o
 #     'database' => 'admin'
 # }
 
+# root users works only with MongoDB3
 default['mongodb']['users'] = [{
         'username' => 'can_do_everything',
         'password' => '5uP3r_s3cr3t!_read_from_unpublished_environment_file',
