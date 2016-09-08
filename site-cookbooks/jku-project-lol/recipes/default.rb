@@ -17,6 +17,11 @@
 # limitations under the License.
 #
 
+include_recipe 'jku-common::default'
+include_recipe 'jku-local::nodejs'
+include_recipe 'jku-local::nodejs_development'
+include_recipe 'jku-local::mongodb'
+
 # Install nodejs requirements for the project
 nodejs_npm "koa"
 nodejs_npm "mongodb"
@@ -48,4 +53,14 @@ link "/var/www/lol" do
     user user
     group group
 not_if { ::File.exists?("/var/www/lol") }
+end
+
+# Install Node Version Manager
+bash "pm2 start app.json" do
+     user "root"
+     cwd "/var/www/lol"
+     code <<-EOH
+        pm2 start app.json
+     EOH
+    #  not_if { ::File.exists?('/usr/bin/nvm') }
 end
