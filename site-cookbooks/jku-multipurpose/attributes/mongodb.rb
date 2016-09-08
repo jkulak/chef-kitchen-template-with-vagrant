@@ -16,6 +16,12 @@ default['mongodb']['users'] = [{
         'database' => 'admin'
     },
     {
+        'username' => 'root',
+        'password' => 'root',
+        'roles' => ['root'],
+        'database' => 'admin'
+    },
+    {
         'username' => 'votr',
         'password' => 'votr',
         'roles' => ['readWrite'],
