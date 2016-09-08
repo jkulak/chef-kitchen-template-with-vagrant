@@ -18,6 +18,6 @@
 #
 
 nodejs_npm "bower"
-nodejs_npm "supervisor"
-# Node Process Manager 
+# nodejs_npm "supervisor"
+# Node Process Manager
 nodejs_npm "pm2"
