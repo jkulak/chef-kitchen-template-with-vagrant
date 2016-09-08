@@ -2,7 +2,7 @@
 
 - [ ] Set up nodejs app properly: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04
 - [ ] Make MySQL work
-- [ ] Fix naming jku-kosiarka & jku-multipurpose
+- [x] Fix naming jku-kosiarka & jku-multipurpose
 - [ ] Switch to MongoDB 3
 
 ## role::webserver
