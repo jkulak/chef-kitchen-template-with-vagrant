@@ -59,12 +59,19 @@ Usage `sudo service mysql-master start|stop|restart|reload|force-reload|status`
 
 ## MongoDB
 
+Version: 2.4.9
+
 Files location
+* service: `/etc/init/mongodb.conf`
 * configuration: `/etc/mongodb.conf`
 * log: `/var/log/mongodb/mongodb.log`
-* service: `/etc/init/mongodb.conf`
 
-Usage `sudo service mongodb start|stop|reload|status|force-stop|force-reload`
+Usage `sudo service mongodb start|stop|status`
+
+Connect to server using mongo client
+* `$ mongo`
+
+Role "root" doesn't exist in MongoDB < 3.
 
 # Hacks
 
