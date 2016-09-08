@@ -1,7 +1,8 @@
-# Cookbook Name:: jku-local
-# Recipe:: project_lol
 #
-# Copyright 2015, Jakub Kułak
+# Cookbook Name:: jku-project-lol
+# Recipe:: default
+#
+# Copyright 2016, Jakub Kułak
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

@@ -7,3 +7,8 @@ data_bag_path    "data_bags"
 
 knife[:berkshelf_path] = "cookbooks"
 Chef::Config[:ssl_verify_mode] = :verify_peer if defined? ::Chef
+
+
+cookbook_copyright "Jakub Kułak"
+cookbook_email "jakub.kulak@gmail.com"
+cookbook_license "apachev2"
