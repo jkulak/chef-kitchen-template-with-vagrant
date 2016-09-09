@@ -1,6 +1,14 @@
 # griller-local-kitchen
 
-Vagrantfile + Chef provisioning scripts for full-stack development environment
+Vagrantfile + Chef provisioning scripts for full-stack local development environment.
+
+## The idea
+
+* Use branches to store configuration per project
+* Create project cookbooks in those branches
+* Update those branches from master to keep them up to date
+
+## Requirements
 
 * Vagrant
 * Chef solo (best from ChefSDK)
