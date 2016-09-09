@@ -23,8 +23,9 @@ include_recipe 'jku-local::nodejs_development'
 include_recipe 'jku-local::mongodb'
 
 # Install nodejs requirements for the project
-nodejs_npm "koa"
+# nodejs_npm "koa"
 nodejs_npm "mongodb"
+nodejs_npm "express-generator"
 
 user = 'lol'
 group = 'lol'
