@@ -1,9 +1,9 @@
-# multipurpose CHANGELOG
+# jku-project-fullstack CHANGELOG
 
-This file is used to list changes made in each version of the multipurpose cookbook.
+This file is used to list changes made in each version of the jku-project-fullstack cookbook.
 
 ## 0.1.0
-- [your_name] - Initial release of multipurpose
+- [your_name] - Initial release of jku-project-fullstack
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

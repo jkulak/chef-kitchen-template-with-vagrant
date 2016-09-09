@@ -5,7 +5,10 @@ DEPENDENCIES
     git: https://github.com/jkulak/jku-common.git
     revision: 329209f0128f9819033c4777c76b7d0dcae81dcc
   jku-local
-    path: site-cookbooks/jku-local
+    git: https://github.com/jkulak/jku-local.git
+    revision: e86d28c0d5fda62e768678652742e13d14b4be9c
+  jku-project-fullstack
+    path: site-cookbooks/jku-project-fullstack
   jku-project-lol
     path: site-cookbooks/jku-project-lol
   locale (~> 1.1.0)
@@ -47,7 +50,7 @@ GRAPH
     magic_shell (~> 1.0.0)
     sudo (~> 2.7.2)
     user (~> 0.4.2)
-  jku-local (0.1.0)
+  jku-local (0.1.1)
     apache2 (~> 3.2.2)
     database (~> 5.1.2)
     jku-common (~> 0.1.1)
@@ -57,8 +60,10 @@ GRAPH
     mysql2_chef_gem (~> 1.1.0)
     nodejs (~> 2.4.4)
     php (~> 1.10.1)
+  jku-project-fullstack (0.1.0)
+    jku-local (~> 0.1.1)
   jku-project-lol (0.1.0)
-    jku-local (~> 0.1.0)
+    jku-local (~> 0.1.1)
   locale (1.1.0)
   magic_shell (1.0.0)
   mariadb (0.3.1)
@@ -83,7 +88,7 @@ GRAPH
     build-essential (>= 0.0.0)
     homebrew (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  openssl (5.0.1)
+  openssl (6.0.0)
   php (1.10.1)
     build-essential (>= 0.0.0)
     iis (>= 0.0.0)
