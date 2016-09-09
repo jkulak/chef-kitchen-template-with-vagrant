@@ -64,8 +64,7 @@ Vagrant.configure(2) do |config|
       chef.environment = "local"
 
       chef.run_list = [
-        #   "recipe[jku-local::default]",
-        #   "recipe[jku-project-lol::default]"
+          "recipe[jku-project-lol::default]",
           "recipe[jku-project-fullstack::default]"
       ]
       chef.json = {
