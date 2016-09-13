@@ -28,6 +28,8 @@ nodejs_npm "mongodb"
 nodejs_npm "express-generator"
 nodejs_npm "yo"
 
+nodejs_npm "gulp-cli"
+
 vhost = 'fullstack.griller'
 user = 'fullstack'
 group = 'fullstack'
