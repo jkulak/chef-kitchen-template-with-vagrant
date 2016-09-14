@@ -20,15 +20,17 @@
 include_recipe 'jku-common::default'
 include_recipe 'jku-local::nodejs'
 include_recipe 'jku-local::nodejs_development'
-include_recipe 'jku-local::mongodb'
-include_recipe 'jku-local::apache2'
+# include_recipe 'jku-local::mongodb'
+# include_recipe 'jku-local::apache2'
 
 # Install nodejs requirements for the project
-nodejs_npm "mongodb"
-nodejs_npm "express-generator"
-nodejs_npm "yo"
+# nodejs_npm "mongodb"
+# nodejs_npm "express-generator"
+# nodejs_npm "yo"
 
+gem_package "sass"
 nodejs_npm "gulp-cli"
+nodejs_npm "gulp"
 
 vhost = 'fullstack.griller'
 user = 'fullstack'
@@ -71,9 +73,10 @@ web_app vhost do
     directory_options '+Indexes'
 end
 
+# Delete the initial directory from the default structure to link mountd directory
 directory "#{node['apache']['docroot_dir']}/#{vhost}/releases/initial" do
   action :delete
-  not_if { ::Dir['your_directory/*'].any? }
+  not_if { ::Dir["#{node['apache']['docroot_dir']}/#{vhost}/releases/initial"].any? }
 end
 
 link "#{node['apache']['docroot_dir']}/#{vhost}/releases/initial" do
