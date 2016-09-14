@@ -31,6 +31,7 @@ include_recipe 'jku-local::nodejs_development'
 gem_package "sass"
 nodejs_npm "gulp-cli"
 nodejs_npm "gulp"
+nodejs_npm "webpack"
 
 vhost = 'fullstack.griller'
 user = 'fullstack'
