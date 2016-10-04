@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: jku-project-fullstack
-# Recipe:: default
+# Recipe:: node
 #
 # Copyright 2016, Jakub Kułak
 #
@@ -18,8 +18,8 @@
 #
 
 include_recipe 'jku-common::default'
-include_recipe 'jku-local::nodejs'
-include_recipe 'jku-local::nodejs_development'
+# include_recipe 'jku-local::nodejs'
+# include_recipe 'jku-local::nodejs_development'
 # include_recipe 'jku-local::mongodb'
 # include_recipe 'jku-local::apache2'
 
@@ -28,22 +28,18 @@ include_recipe 'jku-local::nodejs_development'
 # nodejs_npm "express-generator"
 # nodejs_npm "yo"
 
-gem_package "sass"
-nodejs_npm "gulp-cli"
-nodejs_npm "gulp"
-nodejs_npm "webpack"
+# gem_package "sass"
+# nodejs_npm "gulp-cli"
+# nodejs_npm "gulp"
+# nodejs_npm "webpack"
 
-vhost = 'fullstack.griller'
-user = 'fullstack'
-group = 'fullstack'
-
-user user do
-  comment "#{user} user"
-  home "/home/#{user}"
+user node['fullstack']['user'] do
+  comment "#{node['fullstack']['user']} user"
+  home "/home/#{node['fullstack']['user']}"
   shell '/bin/bash'
 end
 
-group group do
+group node['fullstack']['group'] do
   action :modify
   members ['fullstack']
   append true
@@ -52,36 +48,24 @@ end
 # Create main vhost directory
 directory "/var/www" do
     action :create
-    user user
-    group group
+    user node['fullstack']['user']
+    group node['fullstack']['group']
     not_if { ::File.exists?("/var/www") }
 end
 
 # Create versioned directory structure
-versioned_dir_structure vhost do
+versioned_dir_structure node['fullstack']['vhost'] do
     docroot_dir node['apache']['docroot_dir']
     user node['apache']['user']
     group node['apache']['group']
 end
 
 # Create Apache2 vhost
-web_app vhost do
-    server_name vhost
-    docroot "#{node['apache']['docroot_dir']}/#{vhost}/www"
+web_app node['fullstack']['vhost'] do
+    server_name node['fullstack']['vhost']
+    docroot "#{node['apache']['docroot_dir']}/#{node['fullstack']['vhost']}/www"
     cookbook 'apache2'
     user node['apache']['user']
     group node['apache']['group']
     directory_options '+Indexes'
-end
-
-# Delete the initial directory from the default structure to link mountd directory
-directory "#{node['apache']['docroot_dir']}/#{vhost}/releases/initial" do
-  action :delete
-  not_if { ::Dir["#{node['apache']['docroot_dir']}/#{vhost}/releases/initial"].any? }
-end
-
-link "#{node['apache']['docroot_dir']}/#{vhost}/releases/initial" do
-    to "/mnt/host/mount_dir/fullstack"
-    user user
-    group group
 end
