@@ -18,8 +18,8 @@
 #
 
 include_recipe 'jku-common::default'
-# include_recipe 'jku-local::nodejs'
-# include_recipe 'jku-local::nodejs_development'
+include_recipe 'jku-local::nodejs'
+include_recipe 'jku-local::nodejs_development'
 # include_recipe 'jku-local::mongodb'
 # include_recipe 'jku-local::apache2'
 
@@ -31,7 +31,8 @@ include_recipe 'jku-common::default'
 # gem_package "sass"
 # nodejs_npm "gulp-cli"
 # nodejs_npm "gulp"
-# nodejs_npm "webpack"
+nodejs_npm "webpack"
+nodejs_npm "hjs-webpack"
 
 user node['fullstack']['user'] do
   comment "#{node['fullstack']['user']} user"
@@ -48,8 +49,8 @@ end
 # Create main vhost directory
 directory "/var/www" do
     action :create
-    user node['fullstack']['user']
-    group node['fullstack']['group']
+    user node['apache']['user']
+    group node['apache']['group']
     not_if { ::File.exists?("/var/www") }
 end
 
